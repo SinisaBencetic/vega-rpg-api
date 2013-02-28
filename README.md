@@ -6,3 +6,5 @@ vega-rpg-api
 For those interested more info here:
 
 http://vega-rpg-game-ai.blogspot.com/
+
+Just a small test.
