@@ -1,0 +1,6 @@
+﻿/*
+/* Vega RPG AI - changes log
+/*
+10.03.2013
+Core library to model Vega RPG AI systems independent of any implementation context
+

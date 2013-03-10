@@ -1,0 +1,13 @@
+﻿/*
+/* SrcChess
+/* http://www.codeproject.com/Articles/36112/Chess-Program-in-C
+/*
+Scroll bottom for info
+
+10.03.2013
+
+
+Chess engine ripped of from SrcChess WPF desktop game.
+Chess AI is in separated class library and it will be partialy rewritten to consume Vega RPG AI.
+Purpose is research, tweak and develop Vega RPG AI system using SrcChess as game prototype.
+In future Vega RPG AI should be able to support in same manner other games.

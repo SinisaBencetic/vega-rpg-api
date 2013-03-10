@@ -1,0 +1,19 @@
+﻿/*
+/* http://www.codeproject.com/Articles/36112/Chess-Program-in-C
+/*
+Scroll to bottom for general info
+
+10.03.2013
+ok	Log4net integrated
+
+
+WPF chess program from :
+
+http://www.codeproject.com/Articles/36112/Chess-Program-in-C
+
+Itention is to break it into client server chess program.
+Client shall be passive and thin and will consume REST-full web (ASP.NET WEBAPI) service for 
+AI logic.
+Hence I need to move all smart AI non-visual dependant stuff to web service side.
+
+
