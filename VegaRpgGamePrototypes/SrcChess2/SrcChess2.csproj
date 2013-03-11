@@ -1448,6 +1448,7 @@
     <Compile Include="SearchEngine.cs" />
     <Compile Include="SearchEngineAlphaBeta.cs" />
     <Compile Include="SearchEngineMinMax.cs" />
+    <Compile Include="SearchEngineVegaRPGAI.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TransTable.cs" />
     <Compile Include="ZobristKey.cs" />

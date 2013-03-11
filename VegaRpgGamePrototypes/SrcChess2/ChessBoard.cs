@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace SrcChess2 {
     /// <summary>Implementation of the chess board without any user interface.</summary>
     public sealed class ChessBoard {
-        
+                
         /// <summary>Player color (black and white)</summary>
         public enum PlayerColorE {
             /// <summary>White player</summary>
@@ -131,6 +131,7 @@ namespace SrcChess2 {
         }
         
         /// <summary>Move description</summary>
+        [Serializable]
         public struct MovePosS {
             /// <summary>Original piece if a piece has been eaten</summary>
             public PieceE       OriginalPiece;
@@ -236,6 +237,10 @@ namespace SrcChess2 {
         private SearchEngineAlphaBeta       m_searchEngineAlphaBeta;
         /// <summary>Search engine using Min-Max pruning</summary>
         private SearchEngineMinMax          m_searchEngineMinMax;
+        /// <summary>
+        /// Search engine using Vega RPG AI web service
+        /// </summary>
+        private SearchEngineVegaRPGAI m_searchEngineVegaRPGAI;
         /// <summary>Information about pieces attack</summary>
         private PosInfoS                    m_posInfo;
 
@@ -331,7 +336,8 @@ namespace SrcChess2 {
         /// <summary>
         /// Class constructor. Build a board.
         /// </summary>
-        private ChessBoard(SearchEngineAlphaBeta searchEngineAlphaBeta, SearchEngineMinMax searchEngineMinMax) {
+        private ChessBoard(SearchEngineAlphaBeta searchEngineAlphaBeta, SearchEngineMinMax searchEngineMinMax, SearchEngineVegaRPGAI searchEngineVegaRPGAI)
+        {
             m_pBoard                    = new PieceE[64];
             m_book                      = new Book();
             m_piPiecesCount             = new int[16];
@@ -343,17 +349,19 @@ namespace SrcChess2 {
             m_bDesignMode               = false;
             m_moveStack                 = new MovePosStack();
             m_searchEngineAlphaBeta     = searchEngineAlphaBeta;
-            m_searchEngineMinMax        = searchEngineMinMax;
+            m_searchEngineMinMax = searchEngineMinMax;
+            m_searchEngineVegaRPGAI = searchEngineVegaRPGAI;
             ResetBoard();
         }
 
         /// <summary>
         /// Class constructor. Build a board.
         /// </summary>
-        public ChessBoard(SearchEngine.ITrace trace) : this(null, null) {
+        public ChessBoard(SearchEngine.ITrace trace) : this(null, null, null) {
             m_trace                 = trace;
             m_searchEngineAlphaBeta = new SearchEngineAlphaBeta(trace, m_rnd, m_rndRep);
             m_searchEngineMinMax    = new SearchEngineMinMax(trace, m_rnd, m_rndRep);
+            m_searchEngineVegaRPGAI = new SearchEngineVegaRPGAI(trace, m_rnd, m_rndRep);
         }
 
         /// <summary>
@@ -366,7 +374,7 @@ namespace SrcChess2 {
         /// Class constructor. Use to create a new clone
         /// </summary>
         /// <param name="chessBoard">   Board to copy from</param>
-        private ChessBoard(ChessBoard chessBoard) : this(chessBoard.m_searchEngineAlphaBeta, chessBoard.m_searchEngineMinMax) {
+        private ChessBoard(ChessBoard chessBoard) : this(chessBoard.m_searchEngineAlphaBeta, chessBoard.m_searchEngineMinMax, chessBoard.m_searchEngineVegaRPGAI) {
             CopyFrom(chessBoard);
         }
 
@@ -1722,6 +1730,7 @@ namespace SrcChess2 {
         public void CancelSearch() {
             m_searchEngineAlphaBeta.CancelSearch();
             m_searchEngineMinMax.CancelSearch();
+            m_searchEngineVegaRPGAI.CancelSearch();
         }
 
         /// <summary>
@@ -1742,7 +1751,9 @@ namespace SrcChess2 {
             SearchEngine            searchEngine;
             
             bUseAlphaBeta   = ((searchMode.m_eOption & SearchEngine.SearchMode.OptionE.UseAlphaBeta) != 0);
-            searchEngine    = bUseAlphaBeta ? (SearchEngine)m_searchEngineAlphaBeta : (SearchEngine)m_searchEngineMinMax;
+            //searchEngine    = bUseAlphaBeta ? (SearchEngine)m_searchEngineAlphaBeta : (SearchEngine)m_searchEngineMinMax;
+            //Vega RPG AI
+            searchEngine = m_searchEngineVegaRPGAI;
             bRetVal         = searchEngine.FindBestMove(this,
                                                         searchMode,
                                                         ePlayerColor,
