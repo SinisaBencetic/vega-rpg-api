@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrcChess2GameEngine", "Sarg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrcChess2", "SrcChess2\SrcChess2.csproj", "{03A60417-80E2-4587-817D-1C581427E2B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaRpgWebApi", "VegaRpgWebApi\VegaRpgWebApi.csproj", "{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{03A60417-80E2-4587-817D-1C581427E2B1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{03A60417-80E2-4587-817D-1C581427E2B1}.Release|x86.ActiveCfg = Release|x86
 		{03A60417-80E2-4587-817D-1C581427E2B1}.Release|x86.Build.0 = Release|x86
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
