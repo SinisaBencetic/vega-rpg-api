@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaRpgWebApi", "VegaRpgWebApi\VegaRpgWebApi.csproj", "{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaRpgAi", "VegaRpgAi\VegaRpgAi.csproj", "{6CF4CCDB-D17D-42D1-861A-A0009910D142}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrcChess2GameEngine", "SargonGameEngine\SrcChess2GameEngine.csproj", "{8BBA8494-69EC-41DE-B7B6-6DE4CE92BB44}"
@@ -19,16 +17,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{C385F5F6-FC3D-42F0-ACEE-0BC5C929861A}.Release|x86.ActiveCfg = Release|Any CPU
 		{6CF4CCDB-D17D-42D1-861A-A0009910D142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CF4CCDB-D17D-42D1-861A-A0009910D142}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF4CCDB-D17D-42D1-861A-A0009910D142}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

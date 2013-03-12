@@ -1,5 +1,0 @@
-﻿/*
-/* Vega RPG Api - changes log
-/*
-10.03.2013
-Exposes web interface of Vega RPG AI.
