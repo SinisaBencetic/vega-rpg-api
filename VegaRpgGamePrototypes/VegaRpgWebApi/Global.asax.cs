@@ -23,6 +23,12 @@ namespace VegaRpgWebApi
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapHttpRoute(
+            //    name: "CustomApi",
+            //    routeTemplate: "api/{controller}/{action}/{id}",
+            //    defaults: new { controller = "SrcChess", action="Get", id = RouteParameter.Optional }
+            //);
+
             routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
