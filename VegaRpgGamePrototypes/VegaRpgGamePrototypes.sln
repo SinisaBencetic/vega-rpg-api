@@ -1,13 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaRpgAi", "VegaRpgAi\VegaRpgAi.csproj", "{6CF4CCDB-D17D-42D1-861A-A0009910D142}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrcChess2GameEngine", "SargonGameEngine\SrcChess2GameEngine.csproj", "{8BBA8494-69EC-41DE-B7B6-6DE4CE92BB44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrcChess2", "SrcChess2\SrcChess2.csproj", "{03A60417-80E2-4587-817D-1C581427E2B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaRpgWebApi", "VegaRpgWebApi\VegaRpgWebApi.csproj", "{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaRpgWebApi", "VegaRpgWebApi\VegaRpgWebApi.csproj", "{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,16 +49,16 @@ Global
 		{03A60417-80E2-4587-817D-1C581427E2B1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{03A60417-80E2-4587-817D-1C581427E2B1}.Release|x86.ActiveCfg = Release|x86
 		{03A60417-80E2-4587-817D-1C581427E2B1}.Release|x86.Build.0 = Release|x86
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{11B46B77-D5CA-4AB2-B6ED-22EDA8D7ED17}.Release|x86.ActiveCfg = Release|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F722F4B1-1EF3-4A04-8944-01A31A3FD5B9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
