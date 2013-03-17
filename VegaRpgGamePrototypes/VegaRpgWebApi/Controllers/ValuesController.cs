@@ -3,6 +3,11 @@ using System.Web.Http;
 
 namespace VegaRpgWebApi.Controllers
 {
+    public class Dummy
+    {
+        public string value { get; set; }
+    }
+
     public class ValuesController : ApiController
     {
         // GET api/values
@@ -18,8 +23,9 @@ namespace VegaRpgWebApi.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public string Post(Dummy dummy)
         {
+            return dummy.value[0].ToString();
         }
 
         // PUT api/values/5

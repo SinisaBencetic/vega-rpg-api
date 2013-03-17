@@ -1,4 +1,7 @@
-﻿using System;
+﻿using log4net;
+using log4net.Appender;
+using log4net.Repository.Hierarchy;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
@@ -249,7 +252,7 @@ namespace SrcChess2 {
         /// Builds the list of possible moves for each piece type per position.
         /// Etablished the value of each type of piece for board evaluation.
         /// </summary>
-        static ChessBoard() {
+        static ChessBoard() {            
             List<int[]>     arrMove;
             
             s_posInfoNull.m_iAttackedPieces     = 0;

@@ -6,6 +6,10 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using log4net;
+using System.Reflection;
+using log4net.Repository.Hierarchy;
+using log4net.Appender;
 
 namespace VegaRpgWebApi
 {
@@ -14,10 +18,10 @@ namespace VegaRpgWebApi
 
     public class WebApiApplication : System.Web.HttpApplication
     {
+        private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         protected void Application_Start()
-        {
+        {            
             AreaRegistration.RegisterAllAreas();
-
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
