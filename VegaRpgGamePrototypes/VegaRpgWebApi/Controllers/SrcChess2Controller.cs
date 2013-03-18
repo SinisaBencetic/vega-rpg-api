@@ -18,10 +18,14 @@ namespace VegaRpgWebApi.Controllers
     {
         // GET api/values
         
-        public string Post(string dummy)
+        public string Get(int dummy)
         {
             return "success";
-        }        
+        }
 
+        public string Get()
+        {
+            return "success2";
+        }        
     }
 }

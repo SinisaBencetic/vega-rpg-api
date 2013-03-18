@@ -9,6 +9,8 @@ using System.IO;
 using log4net.Repository.Hierarchy;
 using log4net.Appender;
 using System.Xml.Serialization;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace SrcChess2
 {
@@ -16,9 +18,10 @@ namespace SrcChess2
     /// Uses VEGA RPG AI web service to find best move
     /// </summary>
     public sealed class SearchEngineVegaRPGAI : SearchEngine
-    {        
+    {
         private const string VEGA_RPG_WEB_GETMOVE = "http://localhost:1600/api/srcchess2";
         private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private static bool finished = false;
 
         /// <summary>
         /// Find the best move using Vega RGP AI web service
@@ -44,53 +47,25 @@ namespace SrcChess2
 
             if (moveList.Count < 1) return false;
 
-            var response = GetMove("");
-            
+            string response = string.Empty;
+            finished = false;
+            response = GetMove();            
             moveBest = moveList[0];
 
-            log.Info(String.Format("Movelist.count = {0}",moveList.Count));
+            log.Info(String.Format("Movelist.count = {0}", moveList.Count));
 
             return true;
         }
 
-        private string GetMove(string dummy)
+        private string GetMove()
         {
-            
-            string responseContent = string.Empty;
-            log.Info("Before request");            
-            WebRequest request = WebRequest.Create(VEGA_RPG_WEB_GETMOVE);
-            request.Method = "POST";
-            request.ContentType = "application/xml";
-            ChessBoardPoco chessboard = new ChessBoardPoco{ dummy="dummy"};
-
-            XmlSerializer serializer = new XmlSerializer(typeof(ChessBoardPoco));            
-            serializer.Serialize(new FileStream(@"c:\s.txt",FileMode.Create),chessboard);
-            using (var memStream = new MemoryStream())
+            using (HttpClient client = new HttpClient())
             {
-                serializer.Serialize(memStream, chessboard);
-                StreamReader reader = new StreamReader(memStream);
-                string content = reader.ReadToEnd();
-                request.ContentLength = memStream.Length;
-                using (var requestStream = request.GetRequestStream())
-                {
-                    byte[] buffer = new byte[memStream.Length];
-                    memStream.Read(buffer, 0, (int)memStream.Length);
-                    requestStream.Write(buffer, 0, (int)buffer.Length);                    
-                }
-                memStream.Close();                
-            }                     
-            //request.ContentType = "application/x-www-form-urlencoded";
-            WebResponse response = request.GetResponse();
-            log.Info("waiting response...");
-            using (var responseStream = response.GetResponseStream())
-            {
-                StreamReader reader = new StreamReader(responseStream);
-                responseContent = reader.ReadToEnd();
-                log.Info(string.Format("response: {0}",responseContent));
-                reader.Close();
+                return client.GetStringAsync(VEGA_RPG_WEB_GETMOVE).Result;
             }
-            return responseContent;
         }
+        
+            
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchEngineVegaRPGAI"/> class.
         /// </summary>
