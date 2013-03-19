@@ -93,14 +93,13 @@
     <Compile Include="SearchEngineMinMax.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TransTable.cs" />
+    <Compile Include="VegaModels\MoveList.cs" />
     <Compile Include="ZobristKey.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChangeLog.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

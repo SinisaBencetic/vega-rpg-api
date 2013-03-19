@@ -2,14 +2,17 @@
 using System.Web.Http;
 
 namespace VegaRpgWebApi.Controllers
-{
-    public class Dummy
-    {
-        public string value { get; set; }
-    }
-
+{   
     public class ValuesController : ApiController
     {
+        public class DummyWrapper
+        {
+            public DummyEntity dummy { get; set; }
+            public class DummyEntity
+            {
+                public string value { get; set; }
+            }
+        }
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -23,9 +26,10 @@ namespace VegaRpgWebApi.Controllers
         }
 
         // POST api/values
-        public string Post(Dummy dummy)
+        public string Post(DummyWrapper dummy)
         {
-            return dummy.value[0].ToString();
+            //return dummy.value[0].ToString();
+            return "valuepost";
         }
 
         // PUT api/values/5

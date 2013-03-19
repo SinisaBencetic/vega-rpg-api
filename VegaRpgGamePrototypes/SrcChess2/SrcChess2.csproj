@@ -49,6 +49,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Royale" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -1486,6 +1489,8 @@
     <Compile Include="SearchEngineVegaRPGAI.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TransTable.cs" />
+    <Compile Include="VegaModels\MoveList.cs" />
+    <Compile Include="WebAPIHelper.cs" />
     <Compile Include="ZobristKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

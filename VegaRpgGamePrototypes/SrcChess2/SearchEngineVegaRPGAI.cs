@@ -11,6 +11,8 @@ using log4net.Appender;
 using System.Xml.Serialization;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace SrcChess2
 {
@@ -19,6 +21,14 @@ namespace SrcChess2
     /// </summary>
     public sealed class SearchEngineVegaRPGAI : SearchEngine
     {
+        public class DummyWrapper
+        {
+            public DummyEntity dummy { get; set; }
+            public class DummyEntity
+            {
+                public string value { get; set; }
+            }
+        }
         private const string VEGA_RPG_WEB_GETMOVE = "http://localhost:1600/api/srcchess2";
         private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private static bool finished = false;
@@ -47,23 +57,15 @@ namespace SrcChess2
 
             if (moveList.Count < 1) return false;
 
-            string response = string.Empty;
-            finished = false;
-            response = GetMove();            
-            moveBest = moveList[0];
+            string response = string.Empty;                        
+
+            moveBest= WebAPIHelper.Singleton.Post<ChessBoard.MovePosS, VegaModels.MoveList>(new VegaModels.MoveList() { moves = moveList }, VEGA_RPG_WEB_GETMOVE);            
 
             log.Info(String.Format("Movelist.count = {0}", moveList.Count));
 
             return true;
         }
 
-        private string GetMove()
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                return client.GetStringAsync(VEGA_RPG_WEB_GETMOVE).Result;
-            }
-        }
         
             
         /// <summary>
@@ -75,11 +77,6 @@ namespace SrcChess2
         public SearchEngineVegaRPGAI(ITrace trace, Random rnd, Random rndRep)
             : base(trace, rnd, rndRep)
         {
-        }
-        [Serializable]
-        public class ChessBoardPoco
-        {
-            public string dummy { get; set; }
-        }
+        }        
     }
 }
