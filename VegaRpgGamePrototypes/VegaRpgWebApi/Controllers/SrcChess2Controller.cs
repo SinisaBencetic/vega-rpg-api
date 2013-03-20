@@ -11,29 +11,8 @@ using SrcChess2GameEngine;
 namespace VegaRpgWebApi.Controllers
 {
     public class SrcChess2Controller : ApiController
-    {
-        //public class DummyWrapper
-        //{
-        //    public DummyEntity dummy { get; set; }
-        //    public class DummyEntity
-        //    {
-        //        public string value { get; set; }
-        //    }
-        //}                
-        
-        public string Get()
-        {
-            return "success2";
-        }
-                
-        //public DummyWrapper Post(DummyWrapper pocoParam)
-        //{            
-        //    //var jsonResult = new JsonResult();
-        //    //jsonResult.Data = new DummyWrapper() { dummy = new DummyWrapper.DummyEntity() { value=pocoParam.dummy.value.ToUpper() } };            
-        //    var response = new DummyWrapper() { dummy = new DummyWrapper.DummyEntity() { value = pocoParam.dummy.value.ToUpper() } };
-        //    return response;
-        //}
-
+    {        
+             
         public ChessBoard.MovePosS Post(SrcChess2GameEngine.VegaModels.MoveList moveList)
         {
             var moveResult = new ChessBoard.MovePosS();
