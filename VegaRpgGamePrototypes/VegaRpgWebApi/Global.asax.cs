@@ -20,12 +20,15 @@ namespace VegaRpgWebApi
     {
         private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         protected void Application_Start()
-        {            
+        {
+            log4net.Config.XmlConfigurator.Configure();
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            log.Info("init app..");
         }
     }
 }
